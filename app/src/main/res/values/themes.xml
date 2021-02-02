@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.AlexGames" parent="Theme.AppCompat.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#2196F3</item>
+        <item name="colorPrimaryDark">#3F51B5</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:textColorSecondary">@color/colorPrimary</item>
+        <item name="backgroundColor">#fcfcfc</item>
+        <item name="tabTextColor">#FFFFFF</item>
+
+    </style>
+
+    <style name="Button" parent="Widget.AppCompat.ImageButton">
+        <item name="android:background">@drawable/button_1</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+</resources>

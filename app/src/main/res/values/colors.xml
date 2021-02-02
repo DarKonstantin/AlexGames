@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4169e1</color>
+    <color name="colorPrimaryDark">#000066</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="ic_launcher_background">#fff</color>
+    <color name="tabTextColor">#fff</color>
+    <color name="tabIndicatorA">#2d2d2d</color>
+    <color name="card_color">#CCEEFF</color>
+    <color name="tablehead_color">#F3F3F3</color>
+    <color name="switch_color">#be8ff7</color>
+    <color name="frame_background">#8cc9fa</color>
+    <color name="shadow">#000000</color>
+    <color name="toggleEye">#960101</color>
+    <color name="colorWhite">#cccccc</color>
+    <color name="colorTransparentWhite">#000000</color>
+</resources>
