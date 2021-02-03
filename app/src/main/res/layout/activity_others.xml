@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/rel_others"
     android:background="@drawable/background_main">
     <LinearLayout
         android:id="@+id/lin_others"
@@ -10,138 +11,96 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/border_blue">
+        android:layout_centerVertical="true">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_gravity="center_horizontal|top">
             <ImageButton
-                android:id="@+id/airplane"
+                android:id="@+id/btn_other_1"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/airplane"
                 />
             <ImageButton
-                android:id="@+id/birthday"
+                android:id="@+id/btn_other_2"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/birthday"
                 />
             <ImageButton
-                android:id="@+id/bus"
+                android:id="@+id/btn_other_3"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/bus"
                 />
-            <ImageButton
-                android:id="@+id/car"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_margin="20dp"
-                android:background="@drawable/car"
-                />
-            <ImageButton
-                android:id="@+id/spade"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_margin="20dp"
-                android:background="@drawable/spade"
-                />
+
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_gravity="center_vertical">
+            android:layout_gravity="center_vertical|center_horizontal">
             <ImageButton
-                android:id="@+id/electric_toothbrush"
+                android:id="@+id/btn_other_4"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/electric_toothbrush"
                 />
             <ImageButton
-                android:id="@+id/hammer"
+                android:id="@+id/btn_other_5"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/hammer"
                 />
             <ImageButton
-                android:id="@+id/horn"
+                android:id="@+id/btn_other_6"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/horn"
                 />
-            <ImageButton
-                android:id="@+id/house"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_margin="20dp"
-                android:background="@drawable/house"
-                />
-            <ImageButton
-                android:id="@+id/star"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_margin="20dp"
-                android:background="@drawable/star"
-                />
+
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_gravity="bottom">
+            android:layout_gravity="bottom|center_horizontal">
             <ImageButton
-                android:id="@+id/jumper"
+                android:id="@+id/btn_other_7"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/jumper"
                 />
             <ImageButton
-                android:id="@+id/march"
+                android:id="@+id/btn_other_8"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/march"
                 />
             <ImageButton
-                android:id="@+id/micro"
+                android:id="@+id/btn_other_9"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/micro"
                 />
-            <ImageButton
-                android:id="@+id/pacifier"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_margin="20dp"
-                android:background="@drawable/pacifier"
-                />
-            <ImageButton
-                android:id="@+id/support"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_margin="20dp"
-                android:background="@drawable/support"
-                />
+
         </LinearLayout>
     </LinearLayout>
     <ImageButton
         android:id="@+id/btn_back_others"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_centerVertical="true"
-        android:layout_toStartOf="@+id/lin_others"
         android:background="@drawable/undo" />
 
 </RelativeLayout>

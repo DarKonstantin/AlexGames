@@ -8,6 +8,8 @@
         <item name="android:textColorSecondary">@color/colorPrimary</item>
         <item name="backgroundColor">#fcfcfc</item>
         <item name="tabTextColor">#FFFFFF</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsTranslucent">true</item>
 
     </style>
 
