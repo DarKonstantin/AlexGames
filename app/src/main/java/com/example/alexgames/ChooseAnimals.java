@@ -7,9 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageButton;
-import android.widget.RelativeLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import static com.example.alexgames.Function.AnimImgBtn;
 
 public class ChooseAnimals extends AppCompatActivity {
 
@@ -21,7 +22,7 @@ public class ChooseAnimals extends AppCompatActivity {
             mp_frog, mp_pantera, mp_woodpecker;
     private Integer index_1 = 1, index_2 = 1, index_3 = 1, index_4 = 1, index_5 = 1, index_6 = 1, index_7 = 1, index_8 = 1, index_9 = 1;
 
-    @SuppressLint("WrongViewCast")
+    @SuppressLint({"WrongViewCast", "ClickableViewAccessibility"})
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -52,6 +53,7 @@ public class ChooseAnimals extends AppCompatActivity {
                 }
             }
         });
+        AnimImgBtn(btn_bear);
         btn_bull = findViewById(R.id.bull);
         btn_bull.setTag("bull");
         st_bull = (String) btn_bull.getTag();
@@ -77,6 +79,7 @@ public class ChooseAnimals extends AppCompatActivity {
                 }
             }
         });
+        AnimImgBtn(btn_bull);
         btn_camel = findViewById(R.id.camel);
         btn_camel.setTag("camel");
         st_camel = (String) btn_camel.getTag();
@@ -102,6 +105,7 @@ public class ChooseAnimals extends AppCompatActivity {
                 }
             }
         });
+        AnimImgBtn(btn_camel);
         btn_cat = findViewById(R.id.cat);
         btn_cat.setTag("cat");
         st_cat = (String) btn_cat.getTag();
@@ -127,6 +131,7 @@ public class ChooseAnimals extends AppCompatActivity {
                 }
             }
         });
+        AnimImgBtn(btn_cat);
         btn_dog = findViewById(R.id.dog);
         btn_dog.setTag("dog");
         st_dog = (String) btn_dog.getTag();
@@ -152,6 +157,7 @@ public class ChooseAnimals extends AppCompatActivity {
                 }
             }
         });
+        AnimImgBtn(btn_dog);
         btn_duck = findViewById(R.id.duck);
         btn_duck.setTag("duck");
         st_duck = (String) btn_duck.getTag();
@@ -177,6 +183,7 @@ public class ChooseAnimals extends AppCompatActivity {
                 }
             }
         });
+        AnimImgBtn(btn_duck);
         btn_frog = findViewById(R.id.frog);
         btn_frog.setTag("frog");
         st_frog = (String) btn_frog.getTag();
@@ -202,6 +209,7 @@ public class ChooseAnimals extends AppCompatActivity {
                 }
             }
         });
+        AnimImgBtn(btn_frog);
         btn_pantera = findViewById(R.id.pantera);
         btn_pantera.setTag("pantera");
         st_pantera = (String) btn_pantera.getTag();
@@ -227,6 +235,7 @@ public class ChooseAnimals extends AppCompatActivity {
                 }
             }
         });
+        AnimImgBtn(btn_pantera);
         btn_woodpecker = findViewById(R.id.woodpecker);
         btn_woodpecker.setTag("woodpecker");
         st_woodpecker = (String) btn_woodpecker.getTag();
@@ -252,6 +261,7 @@ public class ChooseAnimals extends AppCompatActivity {
                 }
             }
         });
+        AnimImgBtn(btn_woodpecker);
         btn_back_animals = findViewById(R.id.btn_back_animals);
         btn_back_animals.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -260,6 +270,7 @@ public class ChooseAnimals extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        AnimImgBtn(btn_back_animals);
 
     }
 

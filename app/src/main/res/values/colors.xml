@@ -9,9 +9,9 @@
     <color name="card_color">#CCEEFF</color>
     <color name="tablehead_color">#F3F3F3</color>
     <color name="switch_color">#be8ff7</color>
-    <color name="frame_background">#8cc9fa</color>
+    <color name="blue">#8cc9fa</color>
     <color name="shadow">#000000</color>
-    <color name="toggleEye">#960101</color>
+    <color name="red">#960101</color>
     <color name="colorWhite">#cccccc</color>
     <color name="colorTransparentWhite">#000000</color>
 </resources>

@@ -2,6 +2,8 @@ package com.example.alexgames;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.TransitionDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +12,8 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import static com.example.alexgames.Function.AnimImgBtn;
 
 public class ChooseOthers extends AppCompatActivity {
 
@@ -23,7 +27,7 @@ public class ChooseOthers extends AppCompatActivity {
 
 
 
-    @SuppressLint("WrongViewCast")
+    @SuppressLint({"WrongViewCast", "ClickableViewAccessibility"})
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -57,6 +61,7 @@ public class ChooseOthers extends AppCompatActivity {
 
             }
         });
+        AnimImgBtn(btn_other_1);
         btn_other_2 = findViewById(R.id.btn_other_2);
         btn_other_2.setTag("birthday");
         btn_other_2_name = (String) btn_other_2.getTag();
@@ -84,6 +89,7 @@ public class ChooseOthers extends AppCompatActivity {
                 }
             }
         });
+        AnimImgBtn(btn_other_2);
         btn_other_3 = findViewById(R.id.btn_other_3);
         btn_other_3.setTag("bus");
         btn_other_3_name = (String) btn_other_3.getTag();
@@ -111,6 +117,7 @@ public class ChooseOthers extends AppCompatActivity {
                 }
             }
         });
+        AnimImgBtn(btn_other_3);
         btn_other_4 = findViewById(R.id.btn_other_4);
         btn_other_4.setTag("electric_toothbrush");
         btn_other_4_name = (String) btn_other_4.getTag();
@@ -138,6 +145,7 @@ public class ChooseOthers extends AppCompatActivity {
                 }
             }
         });
+        AnimImgBtn(btn_other_4);
         btn_other_5 = findViewById(R.id.btn_other_5);
         btn_other_5.setTag("hammer");
         btn_other_5_name = (String) btn_other_5.getTag();
@@ -165,6 +173,7 @@ public class ChooseOthers extends AppCompatActivity {
                 }
             }
         });
+        AnimImgBtn(btn_other_5);
         btn_other_6 = findViewById(R.id.btn_other_6);
         btn_other_6.setTag("horn");
         btn_other_6_name = (String) btn_other_6.getTag();
@@ -192,6 +201,7 @@ public class ChooseOthers extends AppCompatActivity {
                 }
             }
         });
+        AnimImgBtn(btn_other_6);
         btn_other_7 = findViewById(R.id.btn_other_7);
         btn_other_7.setTag("jumper");
         btn_other_7_name = (String) btn_other_7.getTag();
@@ -219,6 +229,7 @@ public class ChooseOthers extends AppCompatActivity {
                 }
             }
         });
+        AnimImgBtn(btn_other_7);
         btn_other_8 = findViewById(R.id.btn_other_8);
         btn_other_8.setTag("march");
         btn_other_8_name = (String) btn_other_8.getTag();
@@ -246,6 +257,7 @@ public class ChooseOthers extends AppCompatActivity {
                 }
             }
         });
+        AnimImgBtn(btn_other_8);
         btn_other_9 = findViewById(R.id.btn_other_9);
         btn_other_9.setTag("micro");
         btn_other_9_name = (String) btn_other_9.getTag();
@@ -273,6 +285,7 @@ public class ChooseOthers extends AppCompatActivity {
                 }
             }
         });
+        AnimImgBtn(btn_other_9);
         btn_back_others = findViewById(R.id.btn_back_others);
         btn_back_others.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -281,6 +294,7 @@ public class ChooseOthers extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        AnimImgBtn(btn_back_others);
         RelativeLayout rel_others = findViewById(R.id.rel_others);
         rel_others.setOnTouchListener(new OnSwipeTouchListener(ChooseOthers.this){
             public void onSwipeLeft(){
@@ -289,82 +303,208 @@ public class ChooseOthers extends AppCompatActivity {
                     btn_other_1.setImageResource(R.drawable.car);
                     btn_other_1.setTag("car");
                     btn_other_1_name = (String) btn_other_1.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.airplane);
+                    layers[1] = getResources().getDrawable(R.drawable.car);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_1.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }else{
                     btn_other_1.setImageResource(R.drawable.airplane);
                     btn_other_1.setTag("airplane");
                     btn_other_1_name = (String) btn_other_1.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.car);
+                    layers[1] = getResources().getDrawable(R.drawable.airplane);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_1.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }
                 if(btn_other_2_name.equals("birthday")){
                     btn_other_2.setImageResource(R.drawable.house);
                     btn_other_2.setTag("house");
                     btn_other_2_name = (String) btn_other_2.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.birthday);
+                    layers[1] = getResources().getDrawable(R.drawable.house);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_2.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }else{
                     btn_other_2.setImageResource(R.drawable.birthday);
                     btn_other_2.setTag("birthday");
                     btn_other_2_name = (String) btn_other_2.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.house);
+                    layers[1] = getResources().getDrawable(R.drawable.birthday);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_2.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }
                 if(btn_other_3_name.equals("bus")){
                     btn_other_3.setImageResource(R.drawable.pacifier);
                     btn_other_3.setTag("pacifier");
                     btn_other_3_name = (String) btn_other_3.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.bus);
+                    layers[1] = getResources().getDrawable(R.drawable.pacifier);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_3.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }else{
                     btn_other_3.setImageResource(R.drawable.bus);
                     btn_other_3.setTag("bus");
                     btn_other_3_name = (String) btn_other_3.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.pacifier);
+                    layers[1] = getResources().getDrawable(R.drawable.bus);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_3.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }
                 if(btn_other_4_name.equals("electric_toothbrush")){
                     btn_other_4.setImageResource(R.drawable.spade);
                     btn_other_4.setTag("spade");
                     btn_other_4_name = (String) btn_other_4.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.electric_toothbrush);
+                    layers[1] = getResources().getDrawable(R.drawable.spade);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_4.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }else{
                     btn_other_4.setImageResource(R.drawable.electric_toothbrush);
                     btn_other_4.setTag("electric_toothbrush");
                     btn_other_4_name = (String) btn_other_4.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.spade);
+                    layers[1] = getResources().getDrawable(R.drawable.electric_toothbrush);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_4.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }
                 if(btn_other_5_name.equals("hammer")){
                     btn_other_5.setImageResource(R.drawable.star);
                     btn_other_5.setTag("star");
                     btn_other_5_name = (String) btn_other_5.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.hammer);
+                    layers[1] = getResources().getDrawable(R.drawable.star);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_5.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }else{
                     btn_other_5.setImageResource(R.drawable.hammer);
                     btn_other_5.setTag("hammer");
                     btn_other_5_name = (String) btn_other_5.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.star);
+                    layers[1] = getResources().getDrawable(R.drawable.hammer);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_5.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }
                 if(btn_other_6_name.equals("horn")){
                     btn_other_6.setImageResource(R.drawable.support);
                     btn_other_6.setTag("support");
                     btn_other_6_name = (String) btn_other_6.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.horn);
+                    layers[1] = getResources().getDrawable(R.drawable.support);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_6.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }else{
                     btn_other_6.setImageResource(R.drawable.horn);
                     btn_other_6.setTag("horn");
                     btn_other_6_name = (String) btn_other_6.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.support);
+                    layers[1] = getResources().getDrawable(R.drawable.horn);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_6.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }
                 if(btn_other_7_name.equals("jumper")){
                     btn_other_7.setImageResource(R.drawable.telephone);
                     btn_other_7.setTag("telephone");
                     btn_other_7_name = (String) btn_other_7.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.jumper);
+                    layers[1] = getResources().getDrawable(R.drawable.telephone);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_7.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }else{
                     btn_other_7.setImageResource(R.drawable.jumper);
                     btn_other_7.setTag("jumper");
                     btn_other_7_name = (String) btn_other_7.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.telephone);
+                    layers[1] = getResources().getDrawable(R.drawable.jumper);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_7.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }
                 if(btn_other_8_name.equals("march")){
                     btn_other_8.setImageResource(R.drawable.train);
                     btn_other_8.setTag("train");
                     btn_other_8_name = (String) btn_other_8.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.march);
+                    layers[1] = getResources().getDrawable(R.drawable.train);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_8.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }else{
                     btn_other_8.setImageResource(R.drawable.march);
                     btn_other_8.setTag("march");
                     btn_other_8_name = (String) btn_other_8.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.train);
+                    layers[1] = getResources().getDrawable(R.drawable.march);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_8.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }
                 if(btn_other_9_name.equals("micro")){
                     btn_other_9.setImageResource(R.drawable.watch);
                     btn_other_9.setTag("watch");
                     btn_other_9_name = (String) btn_other_9.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.micro);
+                    layers[1] = getResources().getDrawable(R.drawable.watch);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_9.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }else{
                     btn_other_9.setImageResource(R.drawable.micro);
                     btn_other_9.setTag("micro");
                     btn_other_9_name = (String) btn_other_9.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.watch);
+                    layers[1] = getResources().getDrawable(R.drawable.micro);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_9.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }
             }
             public void onSwipeRight(){
@@ -373,82 +513,208 @@ public class ChooseOthers extends AppCompatActivity {
                     btn_other_1.setImageResource(R.drawable.car);
                     btn_other_1.setTag("car");
                     btn_other_1_name = (String) btn_other_1.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.airplane);
+                    layers[1] = getResources().getDrawable(R.drawable.car);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_1.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }else{
                     btn_other_1.setImageResource(R.drawable.airplane);
                     btn_other_1.setTag("airplane");
                     btn_other_1_name = (String) btn_other_1.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.car);
+                    layers[1] = getResources().getDrawable(R.drawable.airplane);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_1.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }
                 if(btn_other_2_name.equals("birthday")){
                     btn_other_2.setImageResource(R.drawable.house);
                     btn_other_2.setTag("house");
                     btn_other_2_name = (String) btn_other_2.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.birthday);
+                    layers[1] = getResources().getDrawable(R.drawable.house);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_2.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }else{
                     btn_other_2.setImageResource(R.drawable.birthday);
                     btn_other_2.setTag("birthday");
                     btn_other_2_name = (String) btn_other_2.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.house);
+                    layers[1] = getResources().getDrawable(R.drawable.birthday);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_2.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }
                 if(btn_other_3_name.equals("bus")){
                     btn_other_3.setImageResource(R.drawable.pacifier);
                     btn_other_3.setTag("pacifier");
                     btn_other_3_name = (String) btn_other_3.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.bus);
+                    layers[1] = getResources().getDrawable(R.drawable.pacifier);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_3.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }else{
                     btn_other_3.setImageResource(R.drawable.bus);
                     btn_other_3.setTag("bus");
                     btn_other_3_name = (String) btn_other_3.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.pacifier);
+                    layers[1] = getResources().getDrawable(R.drawable.bus);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_3.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }
                 if(btn_other_4_name.equals("electric_toothbrush")){
                     btn_other_4.setImageResource(R.drawable.spade);
                     btn_other_4.setTag("spade");
                     btn_other_4_name = (String) btn_other_4.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.electric_toothbrush);
+                    layers[1] = getResources().getDrawable(R.drawable.spade);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_4.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }else{
                     btn_other_4.setImageResource(R.drawable.electric_toothbrush);
                     btn_other_4.setTag("electric_toothbrush");
                     btn_other_4_name = (String) btn_other_4.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.spade);
+                    layers[1] = getResources().getDrawable(R.drawable.electric_toothbrush);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_4.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }
                 if(btn_other_5_name.equals("hammer")){
                     btn_other_5.setImageResource(R.drawable.star);
                     btn_other_5.setTag("star");
                     btn_other_5_name = (String) btn_other_5.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.hammer);
+                    layers[1] = getResources().getDrawable(R.drawable.star);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_5.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }else{
                     btn_other_5.setImageResource(R.drawable.hammer);
                     btn_other_5.setTag("hammer");
                     btn_other_5_name = (String) btn_other_5.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.star);
+                    layers[1] = getResources().getDrawable(R.drawable.hammer);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_5.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }
                 if(btn_other_6_name.equals("horn")){
                     btn_other_6.setImageResource(R.drawable.support);
                     btn_other_6.setTag("support");
                     btn_other_6_name = (String) btn_other_6.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.horn);
+                    layers[1] = getResources().getDrawable(R.drawable.support);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_6.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }else{
                     btn_other_6.setImageResource(R.drawable.horn);
                     btn_other_6.setTag("horn");
                     btn_other_6_name = (String) btn_other_6.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.support);
+                    layers[1] = getResources().getDrawable(R.drawable.horn);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_6.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }
                 if(btn_other_7_name.equals("jumper")){
                     btn_other_7.setImageResource(R.drawable.telephone);
                     btn_other_7.setTag("telephone");
                     btn_other_7_name = (String) btn_other_7.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.jumper);
+                    layers[1] = getResources().getDrawable(R.drawable.telephone);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_7.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }else{
                     btn_other_7.setImageResource(R.drawable.jumper);
                     btn_other_7.setTag("jumper");
                     btn_other_7_name = (String) btn_other_7.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.telephone);
+                    layers[1] = getResources().getDrawable(R.drawable.jumper);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_7.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }
                 if(btn_other_8_name.equals("march")){
                     btn_other_8.setImageResource(R.drawable.train);
                     btn_other_8.setTag("train");
                     btn_other_8_name = (String) btn_other_8.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.march);
+                    layers[1] = getResources().getDrawable(R.drawable.train);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_8.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }else{
                     btn_other_8.setImageResource(R.drawable.march);
                     btn_other_8.setTag("march");
                     btn_other_8_name = (String) btn_other_8.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.train);
+                    layers[1] = getResources().getDrawable(R.drawable.march);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_8.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }
                 if(btn_other_9_name.equals("micro")){
                     btn_other_9.setImageResource(R.drawable.watch);
                     btn_other_9.setTag("watch");
                     btn_other_9_name = (String) btn_other_9.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.micro);
+                    layers[1] = getResources().getDrawable(R.drawable.watch);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_9.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }else{
                     btn_other_9.setImageResource(R.drawable.micro);
                     btn_other_9.setTag("micro");
                     btn_other_9_name = (String) btn_other_9.getTag();
+                    Drawable[] layers = new Drawable[2];
+                    layers[0] = getResources().getDrawable(R.drawable.watch);
+                    layers[1] = getResources().getDrawable(R.drawable.micro);
+                    TransitionDrawable transition = new TransitionDrawable(layers);
+                    transition.setCrossFadeEnabled(true);
+                    btn_other_9.setImageDrawable(transition);
+                    transition.startTransition(500 /*animation duration*/);
                 }
             }
         });
@@ -460,5 +726,7 @@ public class ChooseOthers extends AppCompatActivity {
     public void soundStop(MediaPlayer sound){
         sound.stop();
     }
+
+
 
 }

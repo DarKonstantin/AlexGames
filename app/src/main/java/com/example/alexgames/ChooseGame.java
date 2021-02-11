@@ -5,16 +5,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import static com.example.alexgames.Function.AnimImgBtn;
+
 public class ChooseGame extends AppCompatActivity {
 
-    ImageButton btn_animals, btn_others;
+    ImageButton btn_animals, btn_others, btn_cartoon, btn_puzzle, btn_back_main;
 
-    @SuppressLint("WrongViewCast")
+    @SuppressLint({"WrongViewCast", "ClickableViewAccessibility"})
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -23,6 +24,9 @@ public class ChooseGame extends AppCompatActivity {
 
         btn_animals = findViewById(R.id.btn_animals);
         btn_others = findViewById(R.id.btn_others);
+        btn_cartoon = findViewById(R.id.btn_cartoon);
+        btn_puzzle = findViewById(R.id.btn_puzzle);
+        btn_back_main = findViewById(R.id.btn_back_main);
 
         btn_animals.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,7 +35,7 @@ public class ChooseGame extends AppCompatActivity {
                 startActivity(animals);
             }
         });
-
+        AnimImgBtn(btn_animals);
         btn_others.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -39,6 +43,30 @@ public class ChooseGame extends AppCompatActivity {
                 startActivity(others);
             }
         });
-
+        AnimImgBtn(btn_others);
+        btn_cartoon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent cartoon = new Intent(ChooseGame.this, ChooseCartoon.class);
+                startActivity(cartoon);
+            }
+        });
+        AnimImgBtn(btn_cartoon);
+        btn_puzzle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent puzzle = new Intent(ChooseGame.this, MainPuzzle.class);
+                startActivity(puzzle);
+            }
+        });
+        AnimImgBtn(btn_puzzle);
+        btn_back_main.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent puzzle = new Intent(ChooseGame.this, MainActivity.class);
+                startActivity(puzzle);
+            }
+        });
+        AnimImgBtn(btn_back_main);
     }
 }
