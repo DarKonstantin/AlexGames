@@ -82,8 +82,9 @@ public class ChooseGame extends AppCompatActivity {
             public void onClick(View view) {
                 click = MediaPlayer.create(ChooseGame.this, R.raw.click);
                 soundPlay(click);
-                Intent puzzle = new Intent(ChooseGame.this, MainActivity.class);
-                startActivity(puzzle);
+//                Intent puzzle = new Intent(ChooseGame.this, MainActivity.class);
+//                startActivity(puzzle);
+                finish();
             }
         });
         AnimImgBtn(btn_back_main);
@@ -99,6 +100,7 @@ public class ChooseGame extends AppCompatActivity {
                 }
             }
         });
+        sound.setVolume(0.2f, 0.2f);
         sound.start();
     }
     public void soundStop(MediaPlayer sound){

@@ -1,7 +1,6 @@
 package com.example.alexgames;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.TransitionDrawable;
 import android.media.MediaPlayer;
@@ -52,10 +51,10 @@ public class ChooseAnimals extends AppCompatActivity {
                     case 1: {
                         if (btn_other_1_name.equals("bear")) {
                             bear = MediaPlayer.create(ChooseAnimals.this, R.raw.bear);
-                            soundPlay(bear);
+                            soundPlayAnimals(bear);
                         } else if(btn_other_1_name.equals("crab")){
                             crab = MediaPlayer.create(ChooseAnimals.this, R.raw.crab);
-                            soundPlay(crab);
+                            soundPlayAnimals(crab);
                         }
                         index1 = 0;
                         break;
@@ -85,10 +84,10 @@ public class ChooseAnimals extends AppCompatActivity {
                     case 1: {
                         if (btn_other_2_name.equals("bull")) {
                             bull = MediaPlayer.create(ChooseAnimals.this, R.raw.bull);
-                            soundPlay(bull);
+                            soundPlayAnimals(bull);
                         } else if(btn_other_2_name.equals("elephant")){
                             elephant = MediaPlayer.create(ChooseAnimals.this, R.raw.elephant);
-                            soundPlay(elephant);
+                            soundPlayAnimals(elephant);
                         }
                         index2 = 0;
                         break;
@@ -118,10 +117,10 @@ public class ChooseAnimals extends AppCompatActivity {
                     case 1: {
                         if (btn_other_3_name.equals("camel")) {
                             camel = MediaPlayer.create(ChooseAnimals.this, R.raw.camel);
-                            soundPlay(camel);
+                            soundPlayAnimals(camel);
                         } else if(btn_other_3_name.equals("fox")){
                             fox = MediaPlayer.create(ChooseAnimals.this, R.raw.fox);
-                            soundPlay(fox);
+                            soundPlayAnimals(fox);
                         }
                         index3 = 0;
                         break;
@@ -151,10 +150,10 @@ public class ChooseAnimals extends AppCompatActivity {
                     case 1: {
                         if (btn_other_4_name.equals("cat")) {
                             cat = MediaPlayer.create(ChooseAnimals.this, R.raw.cat);
-                            soundPlay(cat);
+                            soundPlayAnimals(cat);
                         } else if(btn_other_4_name.equals("lion")){
                             lion = MediaPlayer.create(ChooseAnimals.this, R.raw.lion);
-                            soundPlay(lion);
+                            soundPlayAnimals(lion);
                         }
                         index4 = 0;
                         break;
@@ -184,10 +183,10 @@ public class ChooseAnimals extends AppCompatActivity {
                     case 1: {
                         if (btn_other_5_name.equals("dog")) {
                             dog = MediaPlayer.create(ChooseAnimals.this, R.raw.dog);
-                            soundPlay(dog);
+                            soundPlayAnimals(dog);
                         } else if(btn_other_5_name.equals("orca")){
                             orca = MediaPlayer.create(ChooseAnimals.this, R.raw.orca);
-                            soundPlay(orca);
+                            soundPlayAnimals(orca);
                         }
                         index5 = 0;
                         break;
@@ -217,10 +216,10 @@ public class ChooseAnimals extends AppCompatActivity {
                     case 1: {
                         if (btn_other_6_name.equals("duck")) {
                             duck = MediaPlayer.create(ChooseAnimals.this, R.raw.duck);
-                            soundPlay(duck);
+                            soundPlayAnimals(duck);
                         } else if(btn_other_6_name.equals("panda")){
                             panda = MediaPlayer.create(ChooseAnimals.this, R.raw.panda);
-                            soundPlay(panda);
+                            soundPlayAnimals(panda);
                         }
                         index6 = 0;
                         break;
@@ -250,10 +249,10 @@ public class ChooseAnimals extends AppCompatActivity {
                     case 1: {
                         if (btn_other_7_name.equals("frog")) {
                             frog = MediaPlayer.create(ChooseAnimals.this, R.raw.frog);
-                            soundPlay(frog);
+                            soundPlayAnimals(frog);
                         } else if(btn_other_7_name.equals("rattlesnake")){
                             rattlesnake = MediaPlayer.create(ChooseAnimals.this, R.raw.rattlesnake);
-                            soundPlay(rattlesnake);
+                            soundPlayAnimals(rattlesnake);
                         }
                         index7 = 0;
                         break;
@@ -283,10 +282,10 @@ public class ChooseAnimals extends AppCompatActivity {
                     case 1: {
                         if (btn_other_8_name.equals("pantera")) {
                             pantera = MediaPlayer.create(ChooseAnimals.this, R.raw.pantera);
-                            soundPlay(pantera);
+                            soundPlayAnimals(pantera);
                         } else if(btn_other_8_name.equals("seagull")){
                             seagull = MediaPlayer.create(ChooseAnimals.this, R.raw.seagull);
-                            soundPlay(seagull);
+                            soundPlayAnimals(seagull);
                         }
                         index8 = 0;
                         break;
@@ -316,10 +315,10 @@ public class ChooseAnimals extends AppCompatActivity {
                     case 1: {
                         if (btn_other_9_name.equals("woodpecker")) {
                             woodpecker = MediaPlayer.create(ChooseAnimals.this, R.raw.woodpecker);
-                            soundPlay(woodpecker);
+                            soundPlayAnimals(woodpecker);
                         } else if(btn_other_9_name.equals("seal")){
                             seal = MediaPlayer.create(ChooseAnimals.this, R.raw.seal);
-                            soundPlay(seal);
+                            soundPlayAnimals(seal);
                         }
                         index9 = 0;
                         break;
@@ -334,8 +333,9 @@ public class ChooseAnimals extends AppCompatActivity {
             public void onClick(View view) {
                 click = MediaPlayer.create(ChooseAnimals.this, R.raw.click);
                 soundPlay(click);
-                Intent intent = new Intent(ChooseAnimals.this, ChooseGame.class);
-                startActivity(intent);
+//                Intent intent = new Intent(ChooseAnimals.this, ChooseGame.class);
+//                startActivity(intent);
+                finish();
             }
         });
         AnimImgBtn(btn_back_animals);
@@ -860,7 +860,7 @@ public class ChooseAnimals extends AppCompatActivity {
 
     }
 
-    public void soundPlay(MediaPlayer sound){
+    public void soundPlayAnimals(MediaPlayer sound){
         sound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
@@ -872,6 +872,21 @@ public class ChooseAnimals extends AppCompatActivity {
         });
         sound.start();
     }
+
+    public void soundPlay(MediaPlayer sound){
+        sound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                if (sound != null){
+                    sound.stop();
+                    sound.release();
+                }
+            }
+        });
+        sound.setVolume(0.2f, 0.2f);
+        sound.start();
+    }
+
     public void soundStop(MediaPlayer sound){
         if(sound != null){
             sound.stop();

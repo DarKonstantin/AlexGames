@@ -54,8 +54,9 @@ public class MainPuzzle extends AppCompatActivity {
             public void onClick(View view) {
                 click = MediaPlayer.create(MainPuzzle.this, R.raw.click);
                 soundPlay(click);
-                Intent intent = new Intent(MainPuzzle.this, ChooseGame.class);
-                startActivity(intent);
+//                Intent intent = new Intent(MainPuzzle.this, ChooseGame.class);
+//                startActivity(intent);
+                finish();
             }
         });
         AnimImgBtn(btn_back_puzzle_main);
@@ -193,6 +194,7 @@ public class MainPuzzle extends AppCompatActivity {
                 }
             }
         });
+        sound.setVolume(0.2f, 0.2f);
         sound.start();
     }
     public void soundStop(MediaPlayer sound){

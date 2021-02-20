@@ -1,7 +1,6 @@
 package com.example.alexgames;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -29,7 +28,7 @@ public class ChooseCartoon extends AppCompatActivity {
             public void onClick(View view) {
                 if (index_1 == 1) {
                     mp_geroivmaskah = MediaPlayer.create(ChooseCartoon.this, R.raw.geroivmaskah);
-                    soundPlay(mp_geroivmaskah);
+                    soundPlayMusic(mp_geroivmaskah);
                     index_1 = 0;
                 } else if (index_1 == 0) {
                     soundStop(mp_geroivmaskah);
@@ -44,7 +43,7 @@ public class ChooseCartoon extends AppCompatActivity {
             public void onClick(View view) {
                 if (index_2 == 1) {
                     mp_schenyachiypatrul = MediaPlayer.create(ChooseCartoon.this, R.raw.schenyachiypatrul);
-                    soundPlay(mp_schenyachiypatrul);
+                    soundPlayMusic(mp_schenyachiypatrul);
                     index_2 = 0;
                 } else if (index_2 == 0) {
                     soundStop(mp_schenyachiypatrul);
@@ -59,7 +58,7 @@ public class ChooseCartoon extends AppCompatActivity {
             public void onClick(View view) {
                 if (index_3 == 1) {
                     mp_skazachniipatrul = MediaPlayer.create(ChooseCartoon.this, R.raw.skazachniipatrul);
-                    soundPlay(mp_skazachniipatrul);
+                    soundPlayMusic(mp_skazachniipatrul);
                     index_3 = 0;
                 } else if (index_3 == 0) {
                     soundStop(mp_skazachniipatrul);
@@ -77,13 +76,26 @@ public class ChooseCartoon extends AppCompatActivity {
                 soundStop(mp_skazachniipatrul);
                 click = MediaPlayer.create(ChooseCartoon.this, R.raw.click);
                 soundPlay(click);
-                Intent intent = new Intent(ChooseCartoon.this, ChooseGame.class);
-                startActivity(intent);
+//                Intent intent = new Intent(ChooseCartoon.this, ChooseGame.class);
+//                startActivity(intent);
+                finish();
             }
         });
         AnimImgBtn(btn_back_cartoon);
     }
 
+    public void soundPlayMusic(MediaPlayer sound) {
+        sound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                if (sound != null){
+                    sound.stop();
+                    sound.release();
+                }
+            }
+        });
+        sound.start();
+    }
     public void soundPlay(MediaPlayer sound) {
         sound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
@@ -94,6 +106,7 @@ public class ChooseCartoon extends AppCompatActivity {
                 }
             }
         });
+        sound.setVolume(0.2f, 0.2f);
         sound.start();
     }
 

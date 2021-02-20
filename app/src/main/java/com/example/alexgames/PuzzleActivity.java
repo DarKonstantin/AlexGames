@@ -384,6 +384,7 @@ public class PuzzleActivity extends AppCompatActivity {
                 }
             }
         });
+        sound.setVolume(0.2f, 0.2f);
         sound.start();
     }
     public void soundStop(MediaPlayer sound){

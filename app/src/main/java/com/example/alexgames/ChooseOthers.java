@@ -1,7 +1,6 @@
 package com.example.alexgames;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.TransitionDrawable;
 import android.media.MediaPlayer;
@@ -61,16 +60,16 @@ public class ChooseOthers extends AppCompatActivity {
                     case 1: {
                         if (btn_other_1_name.equals("airplane")) {
                             airplane = MediaPlayer.create(ChooseOthers.this, R.raw.airplane);
-                            soundPlay(airplane);
+                            soundPlayOthers(airplane);
                         } else if(btn_other_1_name.equals("car")){
                             car = MediaPlayer.create(ChooseOthers.this, R.raw.car);
-                            soundPlay(car);
+                            soundPlayOthers(car);
                         }else if(btn_other_1_name.equals("apple")){
                             apple = MediaPlayer.create(ChooseOthers.this, R.raw.apple);
-                            soundPlay(apple);
+                            soundPlayOthers(apple);
                         }else if(btn_other_1_name.equals("football")){
                             football = MediaPlayer.create(ChooseOthers.this, R.raw.football);
-                            soundPlay(football);
+                            soundPlayOthers(football);
                         }
                         index1 = 0;
                         break;
@@ -106,16 +105,16 @@ public class ChooseOthers extends AppCompatActivity {
                     case 1:{
                         if(btn_other_2_name.equals("birthday")){
                             birthday = MediaPlayer.create(ChooseOthers.this, R.raw.birthday);
-                            soundPlay(birthday);
+                            soundPlayOthers(birthday);
                         } else if(btn_other_2_name.equals("house")){
                             house = MediaPlayer.create(ChooseOthers.this, R.raw.house);
-                            soundPlay(house);
+                            soundPlayOthers(house);
                         }else if(btn_other_2_name.equals("attach")){
                             attach = MediaPlayer.create(ChooseOthers.this, R.raw.attach);
-                            soundPlay(attach);
+                            soundPlayOthers(attach);
                         }else if(btn_other_2_name.equals("french_fries")){
                             french_fries = MediaPlayer.create(ChooseOthers.this, R.raw.french_fries);
-                            soundPlay(french_fries);
+                            soundPlayOthers(french_fries);
                         }
                         index2 = 0;
                         break;
@@ -151,16 +150,16 @@ public class ChooseOthers extends AppCompatActivity {
                     case 1:{
                         if(btn_other_3_name.equals("bus")){
                             bus = MediaPlayer.create(ChooseOthers.this, R.raw.bus);
-                            soundPlay(bus);
+                            soundPlayOthers(bus);
                         } else if(btn_other_3_name.equals("pacifier")){
                             pacifier = MediaPlayer.create(ChooseOthers.this, R.raw.pacifier);
-                            soundPlay(pacifier);
+                            soundPlayOthers(pacifier);
                         } else if(btn_other_3_name.equals("banana")){
                             banana = MediaPlayer.create(ChooseOthers.this, R.raw.banana);
-                            soundPlay(banana);
+                            soundPlayOthers(banana);
                         } else if(btn_other_3_name.equals("ghost")){
                             ghost = MediaPlayer.create(ChooseOthers.this, R.raw.ghost);
-                            soundPlay(ghost);
+                            soundPlayOthers(ghost);
                         }
                         index3 = 0;
                         break;
@@ -196,16 +195,16 @@ public class ChooseOthers extends AppCompatActivity {
                     case 1:{
                         if(btn_other_4_name.equals("electric_toothbrush")){
                             electric_toothbrush = MediaPlayer.create(ChooseOthers.this, R.raw.electric_toothbrush);
-                            soundPlay(electric_toothbrush);
+                            soundPlayOthers(electric_toothbrush);
                         } else if(btn_other_4_name.equals("spade")){
                             spade = MediaPlayer.create(ChooseOthers.this, R.raw.spade);
-                            soundPlay(spade);
+                            soundPlayOthers(spade);
                         } else if(btn_other_4_name.equals("bell")){
                             bell = MediaPlayer.create(ChooseOthers.this, R.raw.bell);
-                            soundPlay(bell);
+                            soundPlayOthers(bell);
                         } else if(btn_other_4_name.equals("hair_dryer")){
                             hair_dryer = MediaPlayer.create(ChooseOthers.this, R.raw.hair_dryer);
-                            soundPlay(hair_dryer);
+                            soundPlayOthers(hair_dryer);
                         }
                         index4 = 0;
                         break;
@@ -241,16 +240,16 @@ public class ChooseOthers extends AppCompatActivity {
                     case 1:{
                         if(btn_other_5_name.equals("hammer")){
                             hammer = MediaPlayer.create(ChooseOthers.this, R.raw.hammer);
-                            soundPlay(hammer);
+                            soundPlayOthers(hammer);
                         } else if(btn_other_5_name.equals("star")){
                             star = MediaPlayer.create(ChooseOthers.this, R.raw.star);
-                            soundPlay(star);
+                            soundPlayOthers(star);
                         } else if(btn_other_5_name.equals("cherry")){
                             cherry = MediaPlayer.create(ChooseOthers.this, R.raw.cherry);
-                            soundPlay(cherry);
+                            soundPlayOthers(cherry);
                         } else if(btn_other_5_name.equals("hat")){
                             hat = MediaPlayer.create(ChooseOthers.this, R.raw.hat);
-                            soundPlay(hat);
+                            soundPlayOthers(hat);
                         }
                         index5 = 0;
                         break;
@@ -286,16 +285,16 @@ public class ChooseOthers extends AppCompatActivity {
                     case 1:{
                         if(btn_other_6_name.equals("horn")){
                             horn = MediaPlayer.create(ChooseOthers.this, R.raw.horn);
-                            soundPlay(horn);
+                            soundPlayOthers(horn);
                         } else if(btn_other_6_name.equals("support")){
                             support = MediaPlayer.create(ChooseOthers.this, R.raw.support);
-                            soundPlay(support);
+                            soundPlayOthers(support);
                         } else if(btn_other_6_name.equals("citrus")){
                             citrus = MediaPlayer.create(ChooseOthers.this, R.raw.citrus);
-                            soundPlay(citrus);
+                            soundPlayOthers(citrus);
                         } else if(btn_other_6_name.equals("icecream")){
                             icecream = MediaPlayer.create(ChooseOthers.this, R.raw.icecream);
-                            soundPlay(icecream);
+                            soundPlayOthers(icecream);
                         }
                         index6 = 0;
                         break;
@@ -331,16 +330,16 @@ public class ChooseOthers extends AppCompatActivity {
                     case 1:{
                         if(btn_other_7_name.equals("jumper")){
                             jumper = MediaPlayer.create(ChooseOthers.this, R.raw.jumper);
-                            soundPlay(jumper);
+                            soundPlayOthers(jumper);
                         } else if(btn_other_7_name.equals("telephone")){
                             telephone = MediaPlayer.create(ChooseOthers.this, R.raw.telephone);
-                            soundPlay(telephone);
+                            soundPlayOthers(telephone);
                         } else if(btn_other_7_name.equals("cut")){
                             cut = MediaPlayer.create(ChooseOthers.this, R.raw.cut);
-                            soundPlay(cut);
+                            soundPlayOthers(cut);
                         } else if(btn_other_7_name.equals("katana_sword")){
                             katana_sword = MediaPlayer.create(ChooseOthers.this, R.raw.katana_sword);
-                            soundPlay(katana_sword);
+                            soundPlayOthers(katana_sword);
                         }
                         index7 = 0;
                         break;
@@ -376,16 +375,16 @@ public class ChooseOthers extends AppCompatActivity {
                     case 1:{
                         if(btn_other_8_name.equals("march")){
                             march = MediaPlayer.create(ChooseOthers.this, R.raw.march);
-                            soundPlay(march);
+                            soundPlayOthers(march);
                         } else if(btn_other_8_name.equals("train")){
                             train = MediaPlayer.create(ChooseOthers.this, R.raw.train);
-                            soundPlay(train);
+                            soundPlayOthers(train);
                         } else if(btn_other_8_name.equals("dental")){
                             dental = MediaPlayer.create(ChooseOthers.this, R.raw.dental);
-                            soundPlay(dental);
+                            soundPlayOthers(dental);
                         } else if(btn_other_8_name.equals("light")){
                             light = MediaPlayer.create(ChooseOthers.this, R.raw.light);
-                            soundPlay(light);
+                            soundPlayOthers(light);
                         }
                         index8 = 0;
                         break;
@@ -421,16 +420,16 @@ public class ChooseOthers extends AppCompatActivity {
                     case 1:{
                         if(btn_other_9_name.equals("micro")){
                             micro = MediaPlayer.create(ChooseOthers.this, R.raw.micro);
-                            soundPlay(micro);
+                            soundPlayOthers(micro);
                         } else if(btn_other_9_name.equals("watch")){
                             watch = MediaPlayer.create(ChooseOthers.this, R.raw.watch);
-                            soundPlay(watch);
+                            soundPlayOthers(watch);
                         } else if(btn_other_9_name.equals("drum")){
                             drum = MediaPlayer.create(ChooseOthers.this, R.raw.drum);
-                            soundPlay(drum);
+                            soundPlayOthers(drum);
                         } else if(btn_other_9_name.equals("truck")){
                             truck = MediaPlayer.create(ChooseOthers.this, R.raw.truck);
-                            soundPlay(truck);
+                            soundPlayOthers(truck);
                         }
                         index9 = 0;
                         break;
@@ -445,8 +444,9 @@ public class ChooseOthers extends AppCompatActivity {
             public void onClick(View view) {
                 click = MediaPlayer.create(ChooseOthers.this, R.raw.click);
                 soundPlay(click);
-                Intent intent = new Intent(ChooseOthers.this, ChooseGame.class);
-                startActivity(intent);
+//                Intent intent = new Intent(ChooseOthers.this, ChooseGame.class);
+//                startActivity(intent);
+                finish();
             }
         });
         AnimImgBtn(btn_back_others);
@@ -1437,7 +1437,7 @@ public class ChooseOthers extends AppCompatActivity {
         });
     }
 
-    public void soundPlay(MediaPlayer sound){
+    public void soundPlayOthers(MediaPlayer sound){
         sound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
@@ -1449,6 +1449,21 @@ public class ChooseOthers extends AppCompatActivity {
         });
         sound.start();
     }
+
+    public void soundPlay(MediaPlayer sound){
+        sound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                if (sound != null){
+                    sound.stop();
+                    sound.release();
+                }
+            }
+        });
+        sound.setVolume(0.2f, 0.2f);
+        sound.start();
+    }
+
     public void soundStop(MediaPlayer sound){
         if(sound != null){
             sound.stop();

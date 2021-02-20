@@ -41,5 +41,13 @@
         android:layout_alignParentRight="true"
         android:background="@drawable/flag"
         />
+    <ImageButton
+        android:id="@+id/btn_exit"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/exit"
+        />
 
 </RelativeLayout>
