@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AlexGames</string>
+    <string name="Start">Start</string>
+    <string name="tv_what_is_it">What is it?</string>
+    <string name="tv_who_is_it">Who is it?</string>
+    <string name="tv_sing">Sing?</string>
+    <string name="tv_collect">Collect?</string>
+</resources>

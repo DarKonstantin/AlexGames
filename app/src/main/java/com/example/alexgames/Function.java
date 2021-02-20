@@ -27,12 +27,10 @@ public class Function {
                         break;
                     }
                 }
-
                 return false;
             }
         });
     }
-
     @SuppressLint("ClickableViewAccessibility")
     public static void AnimBtn (Button button){
         button.setOnTouchListener(new View.OnTouchListener() {
@@ -51,7 +49,6 @@ public class Function {
                         break;
                     }
                 }
-
                 return false;
             }
         });

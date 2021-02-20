@@ -14,6 +14,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.ExifInterface;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -37,6 +38,7 @@ public class PuzzleActivity extends AppCompatActivity {
     ArrayList<PuzzlePiece> pieces;
     String mCurrentPhotoPath;
     String mCurrentPhotoUri;
+    private MediaPlayer click, tada;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,11 +46,14 @@ public class PuzzleActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_puzzle);
-
+        tada = MediaPlayer.create(PuzzleActivity.this, R.raw.tada);
+        soundStop(tada);
         ImageButton btn_back_puzzle = findViewById(R.id.btn_back_puzzle);
         btn_back_puzzle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                click = MediaPlayer.create(PuzzleActivity.this, R.raw.click);
+                soundPlay(click);
                 finish();
             }
         });
@@ -301,8 +306,9 @@ public class PuzzleActivity extends AppCompatActivity {
 
     public void checkGameOver() {
         if (isGameOver()) {
+            tada = MediaPlayer.create(PuzzleActivity.this, R.raw.tada);
+            soundPlay(tada);
             Toast.makeText(this, "Молодец!!!", Toast.LENGTH_SHORT).show();
-//            finish();
         }
     }
 
@@ -366,5 +372,24 @@ public class PuzzleActivity extends AppCompatActivity {
         matrix.postRotate(angle);
         return Bitmap.createBitmap(source, 0, 0, source.getWidth(), source.getHeight(),
                 matrix, true);
+    }
+
+    public void soundPlay(MediaPlayer sound){
+        sound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                if (sound != null){
+                    sound.stop();
+                    sound.release();
+                }
+            }
+        });
+        sound.start();
+    }
+    public void soundStop(MediaPlayer sound){
+        if(sound != null){
+            sound.stop();
+            sound.release();
+        }
     }
 }

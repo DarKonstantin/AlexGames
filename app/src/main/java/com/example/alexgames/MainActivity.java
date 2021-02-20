@@ -2,20 +2,21 @@ package com.example.alexgames;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import static com.example.alexgames.Function.AnimBtn;
-import static com.example.alexgames.Function.AnimImgBtn;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static Button btnStart;
+    private MediaPlayer click, bck_sound;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -24,24 +25,54 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+
+        bck_sound = MediaPlayer.create(MainActivity.this, R.raw.background_sound);
+        bck_sound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                if (bck_sound != null){
+                    bck_sound.stop();
+                    bck_sound.release();
+                }
+            }
+        });
+        bck_sound.setVolume(0.1f, 0.1f);
+        bck_sound.setLooping(true);
+        bck_sound.start();
+
         ImageView img_logo = findViewById(R.id.logo);
-        Button btnStart = findViewById(R.id.btn_start);
+        btnStart = findViewById(R.id.btn_start);
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                click = MediaPlayer.create(MainActivity.this, R.raw.click);
+                soundPlay(click);
+
                 Intent intent = new Intent(MainActivity.this, ChooseGame.class);
                 startActivity(intent);
             }
         });
         AnimBtn(btnStart);
-        ImageButton btn_settings = findViewById(R.id.btn_settings);
-        btn_settings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+    }
 
+    public void soundPlay(MediaPlayer sound){
+        sound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                if (sound != null){
+                    sound.stop();
+                    sound.release();
+                }
             }
         });
-        AnimImgBtn(btn_settings);
+        sound.start();
     }
+    public void soundStop(MediaPlayer sound){
+        if(sound != null){
+            sound.stop();
+            sound.release();
+        }
+    }
+
 
 }

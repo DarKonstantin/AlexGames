@@ -4,7 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/rel_others"
-    android:background="@drawable/background_main">
+    android:background="@drawable/gradient">
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/splashGif"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@drawable/cloud_round"
+        />
     <LinearLayout
         android:id="@+id/lin_others"
         android:layout_width="wrap_content"

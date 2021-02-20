@@ -14,7 +14,7 @@ import static com.example.alexgames.Function.AnimImgBtn;
 
 public class ChooseCartoon extends AppCompatActivity {
     private ImageButton btn_back_cartoon, btn_geroivmaskah, btn_schenyachiypatrul, btn_skazachniipatrul;
-    private MediaPlayer mp_geroivmaskah, mp_schenyachiypatrul, mp_skazachniipatrul;
+    private MediaPlayer mp_geroivmaskah, mp_schenyachiypatrul, mp_skazachniipatrul, click;
     private Integer index_1 = 1, index_2 = 1, index_3 = 1;
 
     @SuppressLint({"WrongViewCast", "ClickableViewAccessibility"})
@@ -75,6 +75,8 @@ public class ChooseCartoon extends AppCompatActivity {
                 soundStop(mp_geroivmaskah);
                 soundStop(mp_schenyachiypatrul);
                 soundStop(mp_skazachniipatrul);
+                click = MediaPlayer.create(ChooseCartoon.this, R.raw.click);
+                soundPlay(click);
                 Intent intent = new Intent(ChooseCartoon.this, ChooseGame.class);
                 startActivity(intent);
             }
@@ -83,6 +85,15 @@ public class ChooseCartoon extends AppCompatActivity {
     }
 
     public void soundPlay(MediaPlayer sound) {
+        sound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                if (sound != null){
+                    sound.stop();
+                    sound.release();
+                }
+            }
+        });
         sound.start();
     }
 

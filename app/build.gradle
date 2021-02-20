@@ -10,8 +10,8 @@ android {
         applicationId "com.example.alexgames"
         minSdkVersion 19
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        versionCode 4
+        versionName "1.4"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -23,7 +23,7 @@ android {
             applicationVariants.all { variant ->
                 variant.outputs.each { output ->
                     def versionName = variant.versionName
-                    output.outputFileName = "${versionName}_zakaz.apk"
+                    output.outputFileName = "${versionName}_alex_games.apk"
                 }
             }
         }
@@ -71,4 +71,5 @@ dependencies {
     implementation 'com.sun.mail:android-mail:1.6.2'
     implementation 'com.sun.mail:android-activation:1.6.2'
     implementation 'com.google.android.gms:play-services-location:17.0.0'
+    compile 'pl.droidsonroids.gif:android-gif-drawable:1.2.8'
 }

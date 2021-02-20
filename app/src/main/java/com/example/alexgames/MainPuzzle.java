@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -38,6 +39,7 @@ public class MainPuzzle extends AppCompatActivity {
     static final int REQUEST_PERMISSION_READ_EXTERNAL_STORAGE = 3;
     static final int REQUEST_IMAGE_GALLERY = 4;
     private ImageButton btn_back_puzzle_main;
+    private MediaPlayer click;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +52,8 @@ public class MainPuzzle extends AppCompatActivity {
         btn_back_puzzle_main.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                click = MediaPlayer.create(MainPuzzle.this, R.raw.click);
+                soundPlay(click);
                 Intent intent = new Intent(MainPuzzle.this, ChooseGame.class);
                 startActivity(intent);
             }
@@ -81,6 +85,8 @@ public class MainPuzzle extends AppCompatActivity {
         cameraButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                click = MediaPlayer.create(MainPuzzle.this, R.raw.click);
+                soundPlay(click);
                 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 if (intent.resolveActivity(getPackageManager()) != null) {
                     File photoFile = null;
@@ -162,6 +168,8 @@ public class MainPuzzle extends AppCompatActivity {
         galleryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                click = MediaPlayer.create(MainPuzzle.this, R.raw.click);
+                soundPlay(click);
                 if (ContextCompat.checkSelfPermission(MainPuzzle.this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
                     ActivityCompat.requestPermissions(MainPuzzle.this, new String[] {Manifest.permission.READ_EXTERNAL_STORAGE}, REQUEST_PERMISSION_READ_EXTERNAL_STORAGE);
                 } else {
@@ -175,5 +183,22 @@ public class MainPuzzle extends AppCompatActivity {
 
     }
 
-
+    public void soundPlay(MediaPlayer sound){
+        sound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                if (sound != null){
+                    sound.stop();
+                    sound.release();
+                }
+            }
+        });
+        sound.start();
+    }
+    public void soundStop(MediaPlayer sound){
+        if(sound != null){
+            sound.stop();
+            sound.release();
+        }
+    }
 }
