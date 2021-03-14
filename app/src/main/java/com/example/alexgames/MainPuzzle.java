@@ -2,6 +2,9 @@ package com.example.alexgames;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
@@ -28,6 +31,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 
 import static com.example.alexgames.Function.AnimImgBtn;
@@ -40,6 +44,7 @@ public class MainPuzzle extends AppCompatActivity {
     static final int REQUEST_IMAGE_GALLERY = 4;
     private ImageButton btn_back_puzzle_main;
     private MediaPlayer click;
+    public static Integer rowsMain = 3, colsMain = 4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +52,8 @@ public class MainPuzzle extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_puzzle_main);
+
+
 
         btn_back_puzzle_main = findViewById(R.id.btn_back_puzzle_main);
         btn_back_puzzle_main.setOnClickListener(new View.OnClickListener() {
@@ -203,4 +210,64 @@ public class MainPuzzle extends AppCompatActivity {
             sound.release();
         }
     }
+
+    public void onImageFromSettingsClick (View view){
+        FloatingActionButton settingsButton = findViewById(R.id.settingButton);
+        settingsButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                final String[] sizePuzzle = {"3х4", "4х5", "5х6"};
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainPuzzle.this);
+                builder.setTitle("Выберите размер пазла")
+                        // добавляем переключатели
+                        .setSingleChoiceItems(sizePuzzle, -1,
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog,
+                                                        int item) {
+                                        Toast.makeText(
+                                                MainPuzzle.this,
+                                                "Рабран размер: "
+                                                        + sizePuzzle[item],
+                                                Toast.LENGTH_SHORT).show();
+
+                                        switch(item)
+                                        {
+                                            case 0:
+                                                rowsMain = 3;
+                                                colsMain = 4;
+                                                break;
+                                            case 1:
+                                                rowsMain = 4;
+                                                colsMain = 5;
+                                                break;
+                                            case 2:
+                                                rowsMain = 5;
+                                                colsMain = 6;
+                                                break;
+//So on and so forth
+                                        }
+                                    }
+                                })
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int id) {
+                                // User clicked OK, so save the mSelectedItems results somewhere
+                                // or return them to the component that opened the dialog
+
+
+
+                            }
+                        })
+                        .setNegativeButton("Отмена", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+                builder.show();
+            }
+        });
+    }
+
 }

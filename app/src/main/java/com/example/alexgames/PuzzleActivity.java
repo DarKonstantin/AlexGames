@@ -130,8 +130,8 @@ public class PuzzleActivity extends AppCompatActivity {
 
     private ArrayList<PuzzlePiece> splitImage() {
         int piecesNumber = 12;
-        int rows = 4;
-        int cols = 3;
+        int rows = MainPuzzle.rowsMain;
+        int cols = MainPuzzle.colsMain;
 
         ImageView imageView = findViewById(R.id.imageView);
         ArrayList<PuzzlePiece> pieces = new ArrayList<>(piecesNumber);
